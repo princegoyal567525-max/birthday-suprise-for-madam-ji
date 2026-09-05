@@ -11,12 +11,19 @@ body{margin:0;overflow:hidden;font-family:Arial,sans-serif;background:linear-gra
 .s.a{opacity:1;transform:scale(1);pointer-events:auto}
 .c{max-width:720px;padding:30px 24px;border-radius:28px;background:#ffffffcc;box-shadow:0 15px 55px #70456a33;backdrop-filter:blur(8px)}
 h1{font-size:clamp(36px,9vw,68px)}h2{font-size:clamp(28px,7vw,48px)}p{font-size:clamp(18px,4.3vw,25px);line-height:1.6}
-/* Improved button styles */
-button.btn{appearance:none;border:0;padding:12px 26px;border-radius:999px;background:linear-gradient(90deg,#ff9ccf 0%,#7bdff6 100%);color:#3b0b45;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 10px 30px rgba(124,58,163,0.18), inset 0 -2px 6px rgba(0,0,0,0.06);transition:transform .18s ease,box-shadow .18s ease,filter .18s}
-button.btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 45px rgba(124,58,163,0.22);filter:brightness(1.03)}
-button.btn:active{transform:translateY(-1px) scale(.99)}
-button.btn .icon{margin-left:10px;display:inline-block;transform:translateY(0);transition:transform .22s}
-button.btn:hover .icon{transform:translateY(-4px) rotate(-12deg)}
+/* Enhanced button styles with theme decoration */
+button.btn{appearance:none;border:0;padding:14px 32px;border-radius:999px;background:linear-gradient(135deg,#ff9ccf 0%,#ffb3df 40%,#7bdff6 100%);color:#fff;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 8px 25px rgba(255,156,207,0.4);position:relative;overflow:hidden;transition:all .3s ease;text-shadow:0 2px 4px rgba(59,11,69,0.2)}
+/* Shimmer effect on button */
+button.btn::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,0.3) 50%,transparent 70%);transform:rotate(45deg);animation:shimmer 3s infinite}
+@keyframes shimmer{0%{transform:translateX(-100%) translateY(-100%) rotate(45deg)}100%{transform:translateX(100%) translateY(100%) rotate(45deg)}}
+button.btn:hover{transform:translateY(-6px) scale(1.08);box-shadow:0 16px 35px rgba(255,156,207,0.5),0 0 20px rgba(123,223,246,0.3);filter:brightness(1.1)}
+button.btn:active{transform:translateY(-2px) scale(1.04)}
+button.btn .icon{margin-left:10px;display:inline-block;transform:translateY(0) rotate(0);transition:all .3s ease;font-size:20px}
+button.btn:hover .icon{transform:translateY(-5px) rotate(-15deg) scale(1.2);animation:float .6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(-5px) rotate(-15deg) scale(1.2)}50%{transform:translateY(-8px) rotate(-15deg) scale(1.25)}}
+/* Sparkle effect */
+button.btn::after{content:'✨';position:absolute;font-size:14px;animation:sparkle 1.5s infinite}
+@keyframes sparkle{0%{opacity:0;transform:translate(0,-10px) scale(0)}50%{opacity:1;transform:translate(15px,5px) scale(1)}100%{opacity:0;transform:translate(25px,15px) scale(0)}}
 /* small sparkle animation on the heart icon */
 .heart{font-size:48px;animation:pop 1.2s infinite}
 @keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
@@ -27,23 +34,23 @@ button.btn:hover .icon{transform:translateY(-4px) rotate(-12deg)}
 </style>
 </head>
 <body>
-<div class="s a"><div class="c"><div class="heart">💗</div><h1>Hlw Madam Ji 👀✨</h1><p>Ek chhota sa surprise hai aapke liye... bas thoda sa time dijiye aur swipe kijiye. 💖</p><button class="btn" onclick="go()">Tap kijiye Madam Ji ✨ <span class="icon">➡️</span></button></div></div>
+<div class="s a"><div class="c"><div class="heart">💗</div><h1>Hlw Madam Ji 👀✨</h1><p>Ek chhota sa surprise hai aapke liye... bas thoda sa time dijiye aur swipe kijiye. 💖</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><h2>Sabse pehle ek baat... 🫣💘</h2><p>Jab hum pehli baar mile the, mujhe laga waqt ruk gaya — aapki muskaan ne sab kuch bright kar diya. Aaj usi muskaan ko celebrate karne ka chhota sa tareeka hai yeh surprise. 🥰</p><p>Har pal jo aapne mere saath bitaya, woh meri life ka anmol hissa hai — aur aaj main chahata hoon ki aap khush rahen, hamesha. 💕</p></div></div>
+<div class="s"><div class="c"><h2>Sabse pehle ek baat... 🫣💘</h2><p>Jab hum pehli baar mile the, mujhe laga waqt ruk gaya — aapki muskaan ne sab kuch bright kar diya. Aaj usi muskaan ko celebrate karna chahta hoon. 💕</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><h2>Madam Ji, aap... 🥹✨</h2><p>Aap bohot jyada sweet ho, or meri life ka sabse khaas person bhi aap hi ho. 🫣💗</p><p>Mujhe aapki har ek baat pasand hai — aapka manner, aapki care, aur aapki hasi. Aap mere liye inspiration ho.</p></div></div>
+<div class="s"><div class="c"><h2>Madam Ji, aap... 🥹✨</h2><p>Aap bohot jyada sweet ho, or meri life ka sabse khaas person bhi aap hi ho. 🫣💗</p><p>Mujhe aapki har ek baat pasand hai — aapki care, aapka time aur haan, aapki ghumti rehne wali expressions bhi! 😄</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><h2>Aapki care... 💞</h2><p>Aap jis tarah meri care karti ho, aaj tak kisi ne nahi ki. Aapki choti-choti baatein mujhe bahut hoti hain — woh hi mere din ko shaandar bana deti hain.</p><p>Thank you for always being there and for giving your warmth without kisi condition ke.</p></div></div>
+<div class="s"><div class="c"><h2>Aapki care... 💞</h2><p>Aap jis tarah meri care karti ho, aaj tak kisi ne nahi ki. Aapki choti-choti baatein mujhe bahut hoti hain — woh hi mere din ko shaandar banati hain. 🌸</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><h2>Ek bahut khaas memory... 🌸</h2><p>Jab hum relationship me aaye, woh meri life ki sabse best memory thi. 💕</p><p>Maine aaj tak aapke saath jitna kuch seekha, utna shayad kabhi nahi seekha — har memory mere liye priceless hai.</p></div></div>
+<div class="s"><div class="c"><h2>Ek bahut khaas memory... 🌸</h2><p>Jab hum relationship me aaye, woh meri life ki sabse best memory thi. 💕</p><p>Maine aaj tak aapke saath jitna kuch seekha, utnaa kuch kabhi kisi se nahi. Main hamesha aapka partner hu, har situation me. 💪✨</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><h2>Sorry bhi bolna tha... 🥺</h2><p>Agar kabhi maine aapko hurt kiya ho toh dil se maafi chahta hoon. Main seekh raha hoon aur behtar insan banna chahta hoon, sirf aapke liye. 👉🏻👈🏻</p></div></div>
+<div class="s"><div class="c"><h2>Sorry bhi bolna tha... 🥺</h2><p>Agar kabhi maine aapko hurt kiya ho toh dil se maafi chahta hoon. Main seekh raha hoon aur behtar insan banna chahta hoon, sirf aapke liye. 💗</p><p>Aap mere saath rahi toh mera har aashirwad pura ho jayega. 🙏✨</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><div class="heart">🎂💗🎉</div><h1>Happy Birthday Madam Ji! 🥳</h1><p>Aapka ye special day bohot saari happiness, smiles aur beautiful moments se bhara rahe. ✨</p><p>May every wish of yours come true. Aaj ka din sirf aapke liye ho — enjoy kijiye! 🎈</p></div></div>
+<div class="s"><div class="c"><div class="heart">🎂💗🎉</div><h1>Happy Birthday Madam Ji! 🥳</h1><p>Aapka ye special day bohot saari happiness, smiles aur beautiful moments se bhara rahe. ✨💕</p><p>Aap deserve karti ho dunya ki sabse badi khushi. 🌟</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><h2>Once Again... 💞💕</h2><p>Once again, happy birthday to you mera pyara bchha.. hamesha khush rehna aap meri jaan... 💞💕</p><p>Mujhe kabhi chhod kar mat jaana — main hamesha aapka saath chahunga.</p></div></div>
+<div class="s"><div class="c"><h2>Once Again... 💞💕</h2><p>Once again, happy birthday to you mera pyara bchha.. hamesha khush rehna aap meri jaan... 💞💕</p><p>Mujhe kabhi chhod kar mat jana... aap mere liye sab kuch ho aap mere sapno ki rani ho... 👑💗</p><button class="btn">Swipe <span class="icon">→</span></button></div></div>
 
-<div class="s"><div class="c"><div class="heart">💗✨💗</div><h2>For My Madam Ji 🫣💕</h2><p><b>I really really love you soooo muchhhhhh mera bachha jaan.. 😘💋</b></p><p>Yeh chhota sa surprise bas aapko muskuraane ke liye — I hope it made you smile. ❤️</p></div></div>
+<div class="s"><div class="c"><div class="heart">💗✨💗</div><h2>For My Madam Ji 🫣💕</h2><p><b>I really really love you soooo muchhhhhh mera bachha jaan.. 😘💋</b></p><p>Yeh chhota sa surprise sirf tere liye tha.. kabhi bhool mat jana ke tu mere liye kitni important ho... 💕🌹</p><button class="btn">Finish <span class="icon">💕</span></button></div></div>
 
 <div id="n">1 / 9</div>
 <script>
@@ -61,6 +68,13 @@ document.addEventListener('click', function(e){
   const active = document.querySelector('.s.a');
   if (!active) return;
   if (active.contains(e.target) && e.target.tagName.toLowerCase() !== 'button' && !e.target.closest('button')){
+    go();
+  }
+});
+
+// Button click handler
+document.addEventListener('click', function(e){
+  if(e.target.classList.contains('btn') || e.target.closest('.btn')){
     go();
   }
 });
