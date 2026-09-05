@@ -11,22 +11,40 @@ body{margin:0;overflow:hidden;font-family:Arial,sans-serif;background:linear-gra
 .s.a{opacity:1;transform:scale(1);pointer-events:auto}
 .c{max-width:720px;padding:30px 24px;border-radius:28px;background:#ffffffcc;box-shadow:0 15px 55px #70456a33;backdrop-filter:blur(8px)}
 h1{font-size:clamp(36px,9vw,68px)}h2{font-size:clamp(28px,7vw,48px)}p{font-size:clamp(18px,4.3vw,25px);line-height:1.6}
-button{border:0;border-radius:30px;padding:14px 25px;font-size:18px;font-weight:bold;background:white;color:#7b4272;box-shadow:0 7px 20px #0002}
-.heart{font-size:48px;animation:p 1.2s infinite}
-@keyframes p{0%{transform:scale(1)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
-#n{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);opacity:.55;font-size:13px}
+/* Improved button styles */
+button.btn{appearance:none;border:0;padding:12px 26px;border-radius:999px;background:linear-gradient(90deg,#ff9ccf 0%,#7bdff6 100%);color:#3b0b45;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 10px 30px rgba(124,58,163,0.18), inset 0 -2px 6px rgba(0,0,0,0.06);transition:transform .18s ease,box-shadow .18s ease,filter .18s}
+button.btn:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 20px 45px rgba(124,58,163,0.22);filter:brightness(1.03)}
+button.btn:active{transform:translateY(-1px) scale(.99)}
+button.btn .icon{margin-left:10px;display:inline-block;transform:translateY(0);transition:transform .22s}
+button.btn:hover .icon{transform:translateY(-4px) rotate(-12deg)}
+/* small sparkle animation on the heart icon */
+.heart{font-size:48px;animation:pop 1.2s infinite}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+/* counter */
+#n{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);opacity:.75;font-size:13px;color:#3b0b45}
+/* card tweaks for nicer feel */
+.c{border:1px solid rgba(124,58,163,0.06)}
 </style>
 </head>
 <body>
-<div class="s a"><div class="c"><div class="heart">💗</div><h1>Hlw Madam Ji 👀✨</h1><p>Ek chhota sa surprise hai aapke liye...</p><button onclick="go()">Tap kijiye Madam Ji ✨</button></div></div>
-<div class="s"><div class="c"><h2>Sabse pehle ek baat... 🫣💘</h2><p>Hamhari first baat game me hui thi... 🎮✨</p><p>Or woh meri life ka sabse best moment tha, kyunki tab aap mujhe mili thi. Aapke saath baatein karna bohot accha lagta hai.</p></div></div>
-<div class="s"><div class="c"><h2>Madam Ji, aap... 🥹✨</h2><p>Aap bohot jyada sweet ho, or meri life ka sabse khaas person bhi aap hi ho. 🫣💗</p><p>Mujhe aapki har ek cheez pasand hai. Jab aap haste ho to din ban jata hai.</p></div></div>
-<div class="s"><div class="c"><h2>Aapki care... 💞</h2><p>Aap jis tarah meri care karti ho, aaj tak kisi ne nahi ki.</p><p>Or aapki baatein mujhe itni pasand hain ki mann karta hai bas aap bolo aur main sunu.</p></div></div>
-<div class="s"><div class="c"><h2>Ek bahut khaas memory... 🌸</h2><p>Jab hum relationship me aaye, woh meri life ki sabse best memory thi. 💕</p><p>Maine aaj tak aapke saath jitna kuch seekha, utna shayad kisi se nahi seekha.</p></div></div>
-<div class="s"><div class="c"><h2>Sorry bhi bolna tha... 🥺</h2><p>Aap kabhi-kabhi mujhe itna hurt kar deti ho na... woh mujhe bohot bura lagta hai. 👉🏻👈🏻</p><p>Or main bhi kabhi aapko hurt kar deta hoon to mujhe maaf kar dena.</p></div></div>
-<div class="s"><div class="c"><div class="heart">🎂💗🎉</div><h1>Happy Birthday Madam Ji! 🥳</h1><p>Aapka ye special day bohot saari happiness, smiles aur beautiful moments se bhara rahe. ✨</p></div></div>
-<div class="s"><div class="c"><h2>Once Again... 💞💕</h2><p>once again happy birthday to you mera pyara bchha.. hamesha khush rehna aap meri jaan...💞💕</p><p>Mujhe kabhi chhod kar mat jaana..</p></div></div>
-<div class="s"><div class="c"><div class="heart">💗✨💗</div><h2>For My Madam Ji 🫣💕</h2><p><b>I really really love you soooo muchhhhhh mera bachha jaan.. 😘💋😘💋💋</b></p><p>Or main hamesha aapke saath rehna chahta hoon.</p></div></div>
+<div class="s a"><div class="c"><div class="heart">💗</div><h1>Hlw Madam Ji 👀✨</h1><p>Ek chhota sa surprise hai aapke liye... bas thoda sa time dijiye aur swipe kijiye. 💖</p><button class="btn" onclick="go()">Tap kijiye Madam Ji ✨ <span class="icon">➡️</span></button></div></div>
+
+<div class="s"><div class="c"><h2>Sabse pehle ek baat... 🫣💘</h2><p>Jab hum pehli baar mile the, mujhe laga waqt ruk gaya — aapki muskaan ne sab kuch bright kar diya. Aaj usi muskaan ko celebrate karne ka chhota sa tareeka hai yeh surprise. 🥰</p><p>Har pal jo aapne mere saath bitaya, woh meri life ka anmol hissa hai — aur aaj main chahata hoon ki aap khush rahen, hamesha. 💕</p></div></div>
+
+<div class="s"><div class="c"><h2>Madam Ji, aap... 🥹✨</h2><p>Aap bohot jyada sweet ho, or meri life ka sabse khaas person bhi aap hi ho. 🫣💗</p><p>Mujhe aapki har ek baat pasand hai — aapka manner, aapki care, aur aapki hasi. Aap mere liye inspiration ho.</p></div></div>
+
+<div class="s"><div class="c"><h2>Aapki care... 💞</h2><p>Aap jis tarah meri care karti ho, aaj tak kisi ne nahi ki. Aapki choti-choti baatein mujhe bahut hoti hain — woh hi mere din ko shaandar bana deti hain.</p><p>Thank you for always being there and for giving your warmth without kisi condition ke.</p></div></div>
+
+<div class="s"><div class="c"><h2>Ek bahut khaas memory... 🌸</h2><p>Jab hum relationship me aaye, woh meri life ki sabse best memory thi. 💕</p><p>Maine aaj tak aapke saath jitna kuch seekha, utna shayad kabhi nahi seekha — har memory mere liye priceless hai.</p></div></div>
+
+<div class="s"><div class="c"><h2>Sorry bhi bolna tha... 🥺</h2><p>Agar kabhi maine aapko hurt kiya ho toh dil se maafi chahta hoon. Main seekh raha hoon aur behtar insan banna chahta hoon, sirf aapke liye. 👉🏻👈🏻</p></div></div>
+
+<div class="s"><div class="c"><div class="heart">🎂💗🎉</div><h1>Happy Birthday Madam Ji! 🥳</h1><p>Aapka ye special day bohot saari happiness, smiles aur beautiful moments se bhara rahe. ✨</p><p>May every wish of yours come true. Aaj ka din sirf aapke liye ho — enjoy kijiye! 🎈</p></div></div>
+
+<div class="s"><div class="c"><h2>Once Again... 💞💕</h2><p>Once again, happy birthday to you mera pyara bchha.. hamesha khush rehna aap meri jaan... 💞💕</p><p>Mujhe kabhi chhod kar mat jaana — main hamesha aapka saath chahunga.</p></div></div>
+
+<div class="s"><div class="c"><div class="heart">💗✨💗</div><h2>For My Madam Ji 🫣💕</h2><p><b>I really really love you soooo muchhhhhh mera bachha jaan.. 😘💋</b></p><p>Yeh chhota sa surprise bas aapko muskuraane ke liye — I hope it made you smile. ❤️</p></div></div>
+
 <div id="n">1 / 9</div>
 <script>
 let i=0,s=document.querySelectorAll('.s');
